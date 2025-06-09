@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.12 (YouTubeContentPipeline)" />
+  </component>
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="56078bd7-90f1-4a34-a1d5-2b40bdd362b7" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (YouTubeContentPipeline)" project-jdk-type="Python SDK" />
+</project>
