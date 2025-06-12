@@ -13,3 +13,13 @@ Scoring metrics:
 3)shock value
 4)tone summary
 5)virality score-(fine tune on other metrics)
+
+3. LLM3 (multiple Sound effects assigned  as per time stamp)
+
+This LLM pass takes in the input individually chunked input transcripts, analyses audience pauses, laughs,
+highs and lows to eventually selects from 100s of audio sound effects from
+
+url = examplemp3s.com  assign sound effects to timestamps
+
+after entire pass, audio files associated to correct timestamps will be 
+stitched using the compositing module(ffmpeg)
