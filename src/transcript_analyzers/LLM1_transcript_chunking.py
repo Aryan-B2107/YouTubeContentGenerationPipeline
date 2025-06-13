@@ -41,16 +41,6 @@ headers = {
 
 """
 
-SYSTEM_PROMPT = """You are an expert at identifying and extracting specific content types from video transcripts with timestamps.
-
-Your job is to:
-1. Read the transcript carefully
-2. Identify all instances of the requested content type
-3. Extract the exact timestamp boundaries 
-4. Return the content chunks in structured JSON format
-
-Be precise with timestamps and don't miss any instances."""
-
 #Final Desired OUTPUT FORMAT EXAMPLE:
 
 """chunks: [
@@ -67,6 +57,45 @@ Be precise with timestamps and don't miss any instances."""
       "content": "My wife told me to stop singing..."
     }
   ]
+"""
+
+SYSTEM_PROMPT = """
+You are a content segmentation expert. Analyze this timestamped transcript to identify complete standalone segments.
+
+TASK: Identify Standalone segments that would individually work as short videos
+
+INPUT FORMAT: Array of {content, start_time, end_time}
+
+IDENTIFY:
+- Setup: Context/premise establishment
+- Build-up: Tension/anticipation building
+- Punchline: Comedic payoff
+- Reaction: Audience laughter/response (if present)
+
+RULES:
+- A complete joke MUST include setup + punchline
+- Don't split jokes mid-delivery
+- Include natural pauses/reactions as part of the joke unit
+- Don't cut mid-sentence or mid thought
+-Identify natural entry and exit points which would serve the context(can bypass this rule if amount of segments found are too low)
+-
+
+OUTPUT FORMAT:
+{
+  "jokes": [
+    {
+      "joke_id": 1,
+      "type": "complete|fragment",
+      "components": {
+        "setup": [array of transcript indices],
+        "punchline": [array of transcript indices],
+        "reaction": [array of transcript indices or null]
+      },
+      "confidence": 0.8
+    }
+  ]
+}
+
 """
 
 
