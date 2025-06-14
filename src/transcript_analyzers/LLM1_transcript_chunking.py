@@ -109,9 +109,6 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 
 
-# change kar api key chi location, save it in that, thing i don't remember now, so that it can't be accessed
-
-
 #NOTE: Initially we have to limit to content extraction form 20 minute videos. cause of 8000 output token limits
 def chunk_jokes(transcript_json_file, api_key):
     """
