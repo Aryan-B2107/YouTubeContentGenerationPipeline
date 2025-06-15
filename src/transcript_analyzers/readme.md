@@ -16,7 +16,7 @@ Scoring metrics:
 
 3. LLM3 (multiple Sound effects assigned  as per time stamp)
 
-This LLM pass takes in the input individually chunked input transcripts, analyses audience pauses, laughs,
+This LLM pass takes in the input individually chunked input transcripted chunks, analyses audience pauses, laughs,
 highs and lows to eventually selects from 100s of audio sound effects from
 
 url = examplemp3s.com  assign sound effects to timestamps
