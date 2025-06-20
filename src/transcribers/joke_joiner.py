@@ -22,7 +22,7 @@ def joke_joiner(start_time, end_time):
 
 if __name__ == "__main__":
     jokes_list = []
-    with open(r'C:\Users\omkul\ProjectsCoding\YoutubeContentGenerationPipeline\YouTubeContentGenerationPipeline\src\transcript_analyzers\jokes_segments.json', 'r') as file:
+    with open(r'../transcript_analyzers/jokes_segments.json', 'r') as file:
         data = json.load(file)
         for chunk in data["chunks"]:
             start = convert_to_seconds(chunk["start_time"])

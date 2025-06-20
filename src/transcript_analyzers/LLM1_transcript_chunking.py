@@ -158,4 +158,4 @@ def chunk_jokes(transcript_json_file, api_key):
     return segments
 
 if __name__ == "__main__":
-    chunk_jokes(r"C:\Users\omkul\ProjectsCoding\YoutubeContentGenerationPipeline\YouTubeContentGenerationPipeline\src\transcribers\Converted_json_transcript.json", api_key)
+    chunk_jokes(r"../transcribers/Converted_json_transcript.json", api_key)
