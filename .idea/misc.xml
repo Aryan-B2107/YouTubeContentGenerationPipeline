@@ -6,5 +6,5 @@
   <component name="GitLabDefaultAccount">
     <option name="defaultAccountId" value="56078bd7-90f1-4a34-a1d5-2b40bdd362b7" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (YouTubeContentPipeline)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (YouTubeContentGenerationPipeline)" project-jdk-type="Python SDK" />
 </project>

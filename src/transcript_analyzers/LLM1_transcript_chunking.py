@@ -109,7 +109,7 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 
 
-#NOTE: Initially we have to limit to content extraction form 20 minute videos. cause of 8000 output token limits
+#NOTE: Initially we have to limit to content extraction form 20-minute videos. cause of 8000 output token limits
 def chunk_jokes(transcript_json_file, api_key):
     """
     This Function takes in input JSON file of transcript data,
@@ -144,18 +144,18 @@ def chunk_jokes(transcript_json_file, api_key):
     }
     #Generate
     response = client.models.generate_content(
-        model="gemini-1.5",
+        model="gemini-1.5-flash",
         contents=prompt,
         config=generation_config
     )
 
     #Save into new file, return
 
-    segments = json.loads('llm1_response.txt')
-    with open('Converted_json_transcript.json', 'w') as f:
+    segments = json.loads(response.text)
+    with open('jokes_segments.json', 'w') as f:
         json.dump(segments, f, indent=2)
     print(segments)
     return segments
 
 if __name__ == "__main__":
-    chunk_jokes("Converted_json_transcript.json", api_key)
+    chunk_jokes(r"C:\Users\omkul\ProjectsCoding\YoutubeContentGenerationPipeline\YouTubeContentGenerationPipeline\src\transcribers\Converted_json_transcript.json", api_key)

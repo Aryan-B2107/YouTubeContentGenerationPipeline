@@ -69,7 +69,7 @@ if __name__ == "__main__":
     json_output = convert_script_to_json(sample_raw_transcript)
 
     import json
+    with open("Converted_json_transcript.json", 'w', encoding='utf-8') as f:
+        json.dump(json_output, f, indent=4, ensure_ascii=False)
+
     print(json.dumps(json_output, indent=4))
-
-
-
